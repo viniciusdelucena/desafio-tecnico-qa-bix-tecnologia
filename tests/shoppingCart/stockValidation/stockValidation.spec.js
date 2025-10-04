@@ -8,7 +8,7 @@ test('Adding a product to cart respects available stock', async ({ page }) => {
     });
 
     await page.goto('localhost:3001');
-    await expect(page.getByText('Estoque: 8')).toBeVisible();
+    await expect(page.getByText('Headset — R$ 299,00 Estoque: 8 Adicionar')).toBeVisible();
 
     await page.locator('#qty-3').fill('9');
     await page.getByRole('listitem').filter({ hasText: 'Headset — R$ 299,00 Estoque:' }).getByRole('button').click();
